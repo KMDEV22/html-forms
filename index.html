@@ -59,11 +59,14 @@
         <span>
             cereal
         </span>
-
     </div>
-
+    
+    <button onclick="onSubmit(event)">
+     Submit
+    </button>
     <div>
         <p> 2. Which is the Bigger Planet</p>
+        <input type="hidden" value="Jupiter">
     </div>
     <div class="answer">
         <input type="radio" value="Mercury" name="planets"><span>
@@ -80,7 +83,7 @@
         </span><br>
 
     </div>
-    <button onclick="onSubmit(event)">
+    <button onclick="onSubmit2(event)">
         submit
     </button>
     <script>
@@ -97,9 +100,19 @@
             }
 
         }
+        
+        function onSubmit2(event) {
+            // debugger
+            var answer = document.querySelectorAll("input[type=hidden]")
+            var selection = document.querySelectorAll("input[type=radio]:checked")
+            if (answer[1].value == selection[0].value) {
+                alert("correct")
+        }
+        else {
+                alert("not correct")
+            }
 
-
-
+        }
     </script>
 </body>
 
